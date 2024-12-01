@@ -1,0 +1,225 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Updated font */
+    scroll-behavior: smooth;
+}
+
+/* Color Variables */
+:root {
+    --dark-bg: #0f0e17;
+    --light-bg: #2d1b3c;
+    --accent-bg: #53317e;
+    --text-light: #F5F5F5;
+    --highlight: #e3a94a;
+}
+
+/* Body Styling */
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 16px; /* Slightly larger font for readability */
+}
+
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f0e17;
+    padding: 20px 80px; /* Reduced padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+}
+
+.HeaderLogo {
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Navigation Styles */
+nav {
+    flex: 1;
+}
+
+.navi ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navi ul li {
+    margin: 0 25px; /* Slightly larger space between items */
+}
+
+.navi ul li a {
+    text-decoration: none;
+    color: #ede5ec;
+    font-size: 18px;
+    font-weight: 600; /* Slightly bolder */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Added letter spacing for a modern touch */
+    transition: color 0.3s ease;
+}
+
+.navi ul li a:hover {
+    color: var(--highlight);
+}
+
+/* Base styles for Hamburger Menu */
+.menu-toggle {
+    display: none; /* Hidden on larger screens */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--highlight); /* Highlight color */
+    cursor: pointer;
+    position: absolute; /* Position it */
+    top: 20px; /* Align vertically with header */
+    right: 30px; /* Position on the right side */
+}
+
+/* Adjust mobile-specific styles to trigger earlier */
+@media (max-width: 960px) { /* Adjusted breakpoint */
+    .menu-toggle {
+        display: block; /* Show the hamburger button */
+    }
+
+    .navi ul {
+        display: none; /* Hide navigation by default */
+        flex-direction: column;
+        background-color: var(--dark-bg); /* Match header background */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        right: 0;
+        width: 100%; /* Full-width dropdown */
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight shadow */
+    }
+
+    .navi ul.show {
+        display: flex; /* Show the navigation when toggled */
+    }
+
+    .navi ul li {
+        margin: 10px 0; /* Adjust spacing for mobile */
+        text-align: center;
+    }
+}
+
+
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    margin-bottom: 225px;
+}
+
+/* Styling the message */
+.message {
+    font-size: 40px;  /* Big text */
+    font-weight: bold;
+    color: #ede5ec;  /* Golden color */
+    text-align: center;
+    margin-bottom: 20px;  /* Space between the text and button */
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/* Styling the button */
+.my-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 24px;  /* Bigger button text */
+    font-weight: bold;
+    color: #2d1b3c;  /* White text */
+    background-color: #d4af37;  /* Golden background */
+    border: none;
+    border-radius: 10px;  /* Rounded corners */
+    text-decoration: none;  /* Remove underline from the link */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;  /* Smooth hover effects */
+}
+
+/* Hover effect for the button */
+.my-button:hover {
+    background-color: #53317e;  /* Darker golden color */
+    transform: scale(1.05);  /* Slight zoom effect */
+}
+
+/* Active effect for the button */
+.my-button:active {
+    background-color: #53317e;  /* Even darker golden */
+    transform: scale(0.95);  /* Slight shrink effect */
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-socials {
+    margin-bottom: 10px;
+  }
+  
+  .footer-icon img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    filter: brightness(0) invert(1); /* Makes icons white */
+    margin: 0 10px;
+  }
+  
+  .footer-text {
+    margin: 10px 0;
+    color: var(--text-light);
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-link {
+    margin: 0 10px;
+    color: var(--highlight);
+    text-decoration: underline;
+  }
+  
+  .footer-link:hover {
+    text-decoration: none;
+    color: var(--text-light);
+  }
+
+/* Hover Effect for Links */
+a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: var(--highlight);
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+hr {
+    border: none;
+    height: 2px; /* Thickness of the line */
+    background: linear-gradient(to right, #daa520, #ffd700, #daa520); /* Golden gradient */
+    margin: 10px 100px; /* Space around the line */
+    border-radius: 5px; /* Rounded edges for a sleek look */
+}

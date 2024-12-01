@@ -1,0 +1,632 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Updated font */
+    scroll-behavior: smooth;
+}
+
+/* Color Variables */
+:root {
+    --dark-bg: #0f0e17;
+    --light-bg: #2d1b3c;
+    --accent-bg: #53317e;
+    --text-light: #F5F5F5;
+    --highlight: #e3a94a;
+}
+
+/* Body Styling */
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 16px; /* Slightly larger font for readability */
+}
+
+
+hr {
+    border: none;
+    height: 2px; /* Thickness of the line */
+    background: linear-gradient(to right, #daa520, #e3a94a, #daa520); /* Golden gradient */
+    margin: 30px 100px; /* Space around the line */
+    border-radius: 5px; /* Rounded edges for a sleek look */
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f0e17;
+    padding: 20px 80px; /* Reduced padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+}
+
+.HeaderLogo {
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Navigation Styles for Fullscreen (No Change) */
+.navi ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navi ul li {
+  margin: 0 25px;
+}
+
+.navi ul li a {
+  text-decoration: none;
+  color: #ede5ec;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navi ul li a:hover {
+  color: var(--highlight);
+}
+
+/* Base styles for Hamburger Menu */
+.menu-toggle {
+  display: none; /* Hidden on larger screens */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--highlight); /* Highlight color */
+  cursor: pointer;
+  position: absolute; /* Position it */
+  top: 20px; /* Align vertically with header */
+  right: 30px; /* Position on the right side */
+}
+
+  .navi ul {
+      display: none; /* Hide navigation by default */
+      flex-direction: column;
+      background-color: var(--dark-bg); /* Match header background */
+      position: absolute;
+      top: 100%; /* Position below the header */
+      right: 0;
+      width: 100%; /* Full-width dropdown */
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight shadow */
+  }
+
+  .navi ul.show {
+      display: flex; /* Show the navigation when toggled */
+  }
+
+  .navi ul li {
+      margin: 10px 0; /* Adjust spacing for mobile */
+      text-align: center;
+  }
+
+
+
+
+/* Footer */
+.site-footer {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-socials {
+    margin-bottom: 10px;
+  }
+  
+  .footer-icon img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    filter: brightness(0) invert(1); /* Makes icons white */
+    margin: 0 10px;
+  }
+  
+  .footer-text {
+    margin: 10px 0;
+    color: var(--text-light);
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-link {
+    margin: 0 10px;
+    color: var(--highlight);
+    text-decoration: underline;
+  }
+  
+  .footer-link:hover {
+    text-decoration: none;
+    color: var(--text-light);
+  }
+
+/* Hover Effect for Links */
+a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: var(--highlight);
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+/* Hero Section with Background Image */
+.hero-small {
+    background-image: url('Banner.png'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the focal point of the image */
+    background-repeat: no-repeat; /* Prevents tiling of the image */
+    height: 250px; /* Adjusted for a smaller hero section */
+    color: var(--text-light);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid var(--dark-bg);
+}
+
+.hero-small::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay for better text visibility */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Keeps the content above the overlay */
+}
+
+.hero-content h1 {
+    font-size: 2rem; /* Reduced size for the smaller hero */
+    margin: 0;
+    color: var(--text-light);
+}
+
+.hero-content p {
+    margin: 10px 0 0;
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+
+/* Adjust for Contact Page */
+
+.container {
+    max-width: 800px; /* Set a maximum width to limit text spread */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 15px; /* Add some padding for smaller screens */
+}
+
+.contact-page {
+    margin-top: -20px; /* Subtle overlap between hero and main section */
+}
+
+
+/* Contact Page Styles */
+.contact-page {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-page h2 {
+    color: var(--highlight);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-page p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-muted);
+}
+
+/* Contact Wrapper */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1 1 45%;
+    max-width: 500px;
+    background-color: var(--accent-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-light);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--highlight);
+    border-radius: 5px;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--highlight);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--text-light);
+    color: var(--dark-bg);
+    transform: scale(1.05);
+}
+
+/* Contact Information */
+.contact-info {
+    flex: 1 1 45%;
+    max-width: 500px;
+    padding: 20px;
+    color: var(--text-light);
+}
+
+.contact-info h3 {
+    color: var(--highlight);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: var(--highlight);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Social Links */
+.social-links a {
+    display: inline-block;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a img {
+    width: 20px;
+    height: 20px;
+}
+
+.social-links a:hover {
+    background-color: var(--text-light);
+    transform: scale(1.1);
+}
+
+/* Social Links Styling */
+.social-links {
+    display: flex;
+    gap: 15px; /* Space between social links */
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center align */
+    text-align: center;
+}
+
+.social-link img {
+    width: 40px; /* Adjust icon size */
+    height: 40px; /* Adjust icon size */
+    margin-bottom: 5px; /* Space between icon and text */
+    transition: transform 0.3s ease;
+}
+
+.social-link img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.social-link span {
+    font-size: 0.9rem; /* Adjust text size */
+    color: var(--text-light); /* Match the site's text color */
+    font-weight: bold;
+}
+
+.social-link a {
+    text-decoration: none; /* Remove underline */
+}
+
+.social-link a:hover span {
+    color: var(--highlight); /* Highlight text on hover */
+}
+
+/* General styles for the About Us section */
+#about-us {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  /* Styling the container */
+  #about-us .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  /* Heading styles */
+  #about-us h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Paragraph styles */
+  #about-us p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+  
+/* General styles for the Erotic Hypnosis section */
+#about-hypnosis {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  /* Styling the container */
+  #about-hypnosis .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Heading styles */
+  #about-hypnosis h1,
+  #about-hypnosis h2 {
+    margin-bottom: 1rem;
+  }
+  
+  #about-hypnosis h1 {
+    font-size: 25px;
+    color: var(--highlight);
+  }
+  
+  #about-hypnosis h2 {
+    font-size: 20px;
+    color: var(--highlight);
+  }
+  
+  /* Paragraph styles */
+  #about-hypnosis p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+  
+  /* Center-align list styles */
+  #about-hypnosis ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  #about-hypnosis ul li {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+  }
+  
+  #about-hypnosis ul li::before {
+    content: "• ";
+    color: var(--light-text);
+  }
+
+   /* Center Call-to-Action Button */
+.cta-button {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.book-now {
+    display: inline-block;
+    padding: 10px 75px;
+    background-color: var(--highlight);
+    color: var(--dark-bg);
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-now:hover {
+    background-color: var(--accent-bg);
+    transform: scale(1.05);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    color: var(--highlight);
+  }
+  
+.intro {
+    text-align: center;
+    margin: 1.5rem auto;
+    max-width: 700px;
+    padding: 0 1rem;
+  }
+  
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns, each taking equal space */
+    gap: 1.5rem; /* Spacing between the cards */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; /* Ensures text within the cards is centered */
+  }
+  
+  .service-card {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Add this media query to your CSS */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .services-container {
+      grid-template-columns: 1fr; /* Single column layout */
+      gap: 1rem; /* Adjust spacing between cards */
+      padding: 1rem; /* Add some padding for smaller screens */
+  }
+
+  .service-card {
+      width: 100%; /* Ensure cards take full width of the container */
+  }
+}
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .service-content {
+    padding: 1rem;
+  }
+  
+  .service-content h3 {
+    color: var(--highlight);
+    margin: 0 0 0.5rem;
+  }
+  
+  .service-content p {
+    margin: 0.5rem 0;
+  }
+  
+  .service-price {
+    margin-top: 1rem;
+  }
+  
+  .service-content hr {
+    border: none; /* Removes the default border style */
+    height: 2px; /* Thickness of the line */
+    background-color: var(--highlight); /* Line color */
+    margin: 0; /* Space around the line */
+  }
+
+  .terms {
+    margin: 30px 250px;
+    text-align: center;
+  }
+
+  .terms h2 {
+    color: var(--highlight);
+  }
+
+  .welcomeTerms {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .termsLi {
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .privacy {
+    margin: 30px 250px;
+    text-align: center;
+  }
+
+  .privacy h2 {
+    color: var(--highlight);
+  }
+
+  .welcomePrivacy {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .privacyLi {
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+  }

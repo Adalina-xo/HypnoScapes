@@ -25,6 +25,19 @@ body {
     font-size: 16px; /* Slightly larger font for readability */
 }
 
+/* For normal screens (larger than 960px) */
+@media (min-width: 961px) {
+    .navi ul {
+        display: flex; /* Ensure the navigation is displayed in row layout */
+        flex-direction: row;
+        justify-content: flex-end; /* Align items to the right */
+        background-color: transparent; /* Ensure it's not hidden */
+        position: static; /* Ensure no absolute positioning is interfering */
+        width: auto; /* Let the width adjust based on the content */
+        padding: 0;
+        margin: 0;
+    }
+}
 
 hr {
     border: none;

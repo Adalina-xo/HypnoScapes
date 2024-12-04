@@ -1,6 +1,6 @@
 /* General Reset */
 * {
-    margin: 0;
+    margin: auto;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Updated font */
@@ -34,12 +34,12 @@ hr {
 }
 
 /* Header Section */
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #0f0e17;
-    /* margin: 20px 80px; Reduced padding */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
 }
 

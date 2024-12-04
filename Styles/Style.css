@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Updated font */
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* Color Variables */
@@ -86,14 +87,14 @@ hr {
     cursor: pointer;
     position: absolute; /* Position it relative to the header */
     top: 20px; /* Align vertically with header */
-    right: 30px; /* Position on the right side */
+    right: 10px; /* Position on the right side */
     z-index: 1000; /* Ensures it's on top */
 }
 
 @media (max-width: 960px) {
     .menu-toggle {
         display: block; /* Show the hamburger button on smaller screens */
-    }}
+    }
 
 .navi ul {
         display: none;
@@ -103,14 +104,18 @@ hr {
         top: 100;
         right: 0;
         width: 100%;
+        max-width: 100%;
         padding: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         z-index: 999;
        }
 
-   /* .navi ul.show {
-        display: flex; 
-    } /*
+    .navi ul.show {
+        display: flex; /* Show the navigation when toggled */
+    }
+
+
+}
 
 /* Hero Section */
 .hero {
@@ -124,7 +129,7 @@ hr {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .hero h1 {
@@ -132,9 +137,22 @@ hr {
     letter-spacing: 3px; /* More spacing between letters */
     color: var(--text-light);
     background: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
-    padding: 20px 30px;
+    padding: 10px 20px;
     border-radius: 12px; /* More rounded edges */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Softer shadow */
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em; /* Scale down the font */
+        padding: 10px 20px; /* Adjust padding */
+    }
 }
 
 /* About Section */
@@ -221,6 +239,18 @@ hr {
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* More intense shadow */
 }
 
+@media (max-width: 768px) {
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Allow the cards to fill up more space on smaller screens */
+    }
+}
+
+
 /* Center Call-to-Action Button */
 .cta-button {
     margin-top: 50px;
@@ -287,6 +317,13 @@ hr {
     line-height: 1.8;
     max-width: 900px;
     margin: auto;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column; /* Stack the form fields vertically */
+        gap: 10px; /* Reduce gap on smaller screens */
+    }
 }
 
 /* Footer */

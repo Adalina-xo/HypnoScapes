@@ -44,8 +44,8 @@ hr {
 }
 
 .HeaderLogo {
-    height: auto;
-    margin: 20px;
+    max-height: 80px;
+    max-width: 100%;
     object-fit: contain;
 }
 

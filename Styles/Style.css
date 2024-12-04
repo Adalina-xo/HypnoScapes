@@ -93,7 +93,7 @@ hr {
 @media (max-width: 960px) {
     .menu-toggle {
         display: block; /* Show the hamburger button on smaller screens */
-    }
+    }}
 
 .navi ul {
         display: none;
@@ -108,12 +108,9 @@ hr {
         z-index: 999;
        }
 
-    .navi ul.show {
-        display: flex; /* Show the navigation when toggled */
-    }
-
-
-}
+   /* .navi ul.show {
+        display: flex; 
+    } /*
 
 /* Hero Section */
 .hero {

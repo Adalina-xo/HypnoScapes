@@ -1,0 +1,425 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Updated font */
+    scroll-behavior: smooth;
+}
+
+/* Color Variables */
+:root {
+    --dark-bg: #0f0e17;
+    --light-bg: #2d1b3c;
+    --accent-bg: #53317e;
+    --text-light: #F5F5F5;
+    --highlight: #e3a94a;
+}
+
+/* Body Styling */
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 16px; /* Slightly larger font for readability */
+}
+
+
+hr {
+    border: none;
+    height: 2px; /* Thickness of the line */
+    background: linear-gradient(to right, #daa520, #ffd700, #daa520); /* Golden gradient */
+    margin: 10px 100px; /* Space around the line */
+    border-radius: 5px; /* Rounded edges for a sleek look */
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f0e17;
+    /* margin: 20px 80px; Reduced padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+}
+
+.HeaderLogo {
+    height: 80px;
+    margin: 20px 80px;
+    object-fit: contain;
+}
+
+/* Navigation Styles */
+.navi ul {
+    display: flex;
+    list-style: none;
+    margin: 20px 80px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navi ul li {
+    margin: 0 25px;
+}
+
+.navi ul li a {
+    text-decoration: none;
+    color: #ede5ec;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.navi ul li a:hover {
+    color: var(--highlight);
+}
+
+/* Base styles for Hamburger Menu */
+.menu-toggle {
+    display: none; /* Hidden on larger screens */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--highlight); /* Highlight color */
+    cursor: pointer;
+    position: absolute; /* Position it relative to the header */
+    top: 20px; /* Align vertically with header */
+    right: 30px; /* Position on the right side */
+    z-index: 1000; /* Ensures it's on top */
+}
+
+@media (max-width: 960px) {
+    .menu-toggle {
+        display: block; /* Show the hamburger button on smaller screens */
+    }
+
+.navi ul {
+        display: none;
+        flex-direction: column;
+        background-color: var(--dark-bg);
+        position: absolute;
+        top: 100;
+        right: 0;
+        width: 100%;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+       }
+
+    .navi ul.show {
+        display: flex; /* Show the navigation when toggled */
+    }
+
+
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--highlight);
+    text-align: center;
+    background-image: url('Banner.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    letter-spacing: 3px; /* More spacing between letters */
+    color: var(--text-light);
+    background: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
+    padding: 20px 30px;
+    border-radius: 12px; /* More rounded edges */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Softer shadow */
+}
+
+/* About Section */
+.about {
+    padding: 60px 40px;
+    background: var(--neutral-bg);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.8em; /* Larger heading */
+    margin-bottom: 30px; /* More space between heading and text */
+    color: var(--highlight);
+}
+
+.about p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Services Section */
+.services {
+    padding: 60px 40px;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: var(--highlight);
+}
+
+/* Service Cards */
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Larger gap between cards */
+    margin-top: 40px;
+}
+
+.card {
+    background-color: var(--light-bg);
+    color: var(--text-light);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 25px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 4px solid var(--highlight);
+}
+
+.card h3 {
+    font-size: 1.9em;
+    color: var(--highlight);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    min-height: 60px; 
+    text-align: center;
+}
+
+.card p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-top: auto;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* More intense shadow */
+}
+
+/* Center Call-to-Action Button */
+.cta-button {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.book-now {
+    display: inline-block;
+    padding: 10px 75px;
+    background-color: var(--highlight);
+    color: var(--dark-bg);
+    font-size: 1rem;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-now:hover {
+    background-color: var(--accent-bg);
+    transform: scale(1.05);
+}
+
+
+/* How It Works Section */
+.how-it-works {
+    padding: 60px 40px;
+    background: var(--dark-bg);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: var(--highlight);
+}
+
+.how-it-works p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Contact Section */
+.IndexContact {
+    padding: 60px 40px;
+    
+    color: var(--text-light);
+    text-align: center;
+}
+
+.IndexContact h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: var(--highlight);
+}
+
+.IndexContact p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-socials {
+    margin-bottom: 10px;
+  }
+  
+  .footer-icon img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    filter: brightness(0) invert(1); /* Makes icons white */
+    margin: 0 10px;
+  }
+  
+  .footer-text {
+    margin: 10px 0;
+    color: var(--text-light);
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-link {
+    margin: 0 10px;
+    color: var(--highlight);
+    text-decoration: underline;
+  }
+  
+  .footer-link:hover {
+    text-decoration: none;
+    color: var(--text-light);
+  }
+
+/* Hover Effect for Links */
+a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: var(--highlight);
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+.contact-form {
+    background-color: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px; /* Increased max-width to accommodate side-by-side fields */
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    color: var(--text-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 20px; /* Adds space between columns */
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    flex: 1;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--accent-bg);
+    border-radius: 4px;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--highlight);
+  }
+  
+  .form-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-light);
+    background-color: var(--accent-bg);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-button:hover {
+    background-color: var(--highlight);
+  }

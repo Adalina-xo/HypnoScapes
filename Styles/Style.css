@@ -91,11 +91,6 @@ hr {
     z-index: 1000; /* Ensures it's on top */
 }
 
-@media (max-width: 960px) {
-    .menu-toggle {
-        display: block; /* Show the hamburger button on smaller screens */
-    }
-
 .navi ul {
         display: none;
         flex-direction: column;
@@ -114,8 +109,6 @@ hr {
         display: flex; /* Show the navigation when toggled */
     }
 
-
-}
 
 /* Hero Section */
 .hero {
